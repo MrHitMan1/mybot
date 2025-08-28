@@ -24,16 +24,16 @@ async def on_ready():
 async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandOnCooldown):
         await ctx.channel.purge(limit=1)
-        await ctx.send('pooping rn {:.2f}s remaining'.format(error.retry_after))
+        await ctx.send('busy rn {:.2f}s remaining'.format(error.retry_after))
 
 @client.command(aliases= ['ping'])
 async def poop(ctx):
  ping = client.latency * 1000
- await ctx.send(f'poop returned in {round(ping / 5)}ms')
+ await ctx.send(f'ping returned in {round(ping / 5)}ms')
 
 @client.command()
 async def commandlist(ctx):
- await ctx.send('.poop, .predict, .what_da_bot_doin')  
+ await ctx.send('.ping, .predict, .what_da_bot_doin')  
 
 @client.command()
 async def what_da_bot_doing(ctx):
@@ -67,10 +67,10 @@ async def predict(ctx, *, question):
 @client.command()
 async def say(ctx, *, arg):
  await ctx.message.delete()
- whitelist = [451991202926166021] 
+ whitelist = ["enter your discord id here"] 
 
  if ctx.author.id not in whitelist:
            return
  else: await ctx.send(arg)
 
-client.run('ODE0NzAzODExNDc4MjkwNDUy.YDhuDQ.X6G1Ie8yF8foNJbCT_q_ObYZCU4'
+client.run('insert your discord token here')
